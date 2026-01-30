@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Cónclave | Team Building Estratégico en San Martín</title>
+    <title>El Cónclave | Team Building & Bodega Medieval</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,197 +23,158 @@
         
         .hero-section {
             position: relative;
-            min-height: 85vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1551298370-9d3d73752c17?auto=format&fit=crop&q=80') center/cover;
         }
         
-        .section { padding: 6rem 1.5rem; }
-        .section-wine { background-color: var(--granate); color: var(--crema); }
+        .section { padding: 5rem 1.5rem; }
         
-        /* Estilo para destacar el Team Building */
-        .highlight-card {
+        .card-main {
             background: white;
-            border-left: 5px solid var(--dorado);
-            padding: 2rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        }
-
-        .step-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            border: 1px solid #e5e7eb;
-        }
-        
-        .step-card:hover { 
-            border-color: var(--dorado);
-            transform: translateY(-5px);
-        }
-
-        .icon-box {
-            width: 60px;
-            height: 60px;
-            background: var(--crema);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-container {
-            max-width: 650px;
-            margin: 0 auto;
-            background: white;
-            padding: 3rem;
             border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
         }
 
-        input, textarea, select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            margin-bottom: 1rem;
-            border-radius: 4px;
+        .upgrade-card {
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border: 2px solid var(--dorado);
+            position: relative;
+        }
+
+        .badge {
+            background: var(--dorado);
+            color: white;
+            padding: 4px 12px;
+            font-size: 0.7rem;
+            font-family: 'Cinzel', serif;
+            position: absolute;
+            top: 20px;
+            right: -10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
         }
 
         .btn-main {
-            background: var(--dorado);
+            background: var(--granate);
             color: white;
-            padding: 1rem 2.5rem;
+            padding: 1rem 2rem;
             font-family: 'Cinzel', serif;
-            font-weight: 700;
             display: inline-block;
             transition: all 0.3s;
         }
 
-        .btn-main:hover { background: #966d09; transform: scale(1.02); }
+        .btn-main:hover { background: var(--negro-suave); }
+
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            background: var(--crema);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+        }
     </style>
 </head>
 <body>
 
     <section class="hero-section text-center">
         <div class="max-w-4xl px-4">
-            <span class="text-white tracking-[0.4em] font-serif text-sm uppercase mb-4 block">Experiencia de Equipo</span>
+            <span class="text-white tracking-[0.3em] font-serif text-sm uppercase mb-4 block">La Bodega Medieval Presenta</span>
             <h1 class="font-display text-5xl md:text-7xl font-semibold text-white mb-6">
-                Mucho más que una reunión
+                El Reto del Cónclave
             </h1>
-            <p class="text-xl text-white opacity-90 font-light mb-10 max-w-2xl mx-auto">
-                Un retiro diseñado para equipos pequeños que buscan fortalecer la confianza y desbloquear el pensamiento creativo fuera de la oficina.
+            <p class="text-xl text-white opacity-90 font-light mb-8 max-w-2xl mx-auto">
+                Una experiencia de estrategia y cohesión para equipos de hasta 5 líderes. 
+                <br><span class="font-semibold text-[#B8860B]">Juego → Cata → Reflexión.</span>
             </p>
-            <a href="#contacto" class="btn-main">Reservar el Retiro</a>
+            <a href="#experiencia" class="btn-main">Ver la experiencia</a>
         </div>
     </section>
     
-    <section class="section">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="font-display text-4xl font-semibold text-[#5C1A1B] mb-4">Fortalecer el núcleo del negocio</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">El éxito no solo depende de las hojas de cálculo, sino de cómo se entiende el equipo cuando la presión aumenta.</p>
+    <section id="experiencia" class="section">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="card-main p-8 border-t-4 border-blue-900">
+                    <div class="icon-circle">🎯</div>
+                    <h3 class="font-serif text-xl mb-4 text-blue-900">1. El Desafío GPS</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        No es una charla. Es acción. El equipo debe recorrer San Martín resolviendo un reto estratégico autoguiado. El entorno medieval se convierte en el tablero de juego para medir la comunicación y el liderazgo.
+                    </p>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Duración: 2h aprox.</span>
+                </div>
+
+                <div class="card-main p-8 border-t-4 border-[#5C1A1B]">
+                    <div class="icon-circle">🍷</div>
+                    <h3 class="font-serif text-xl mb-4 text-[#5C1A1B]">2. Cónclave en la Bodega</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        Tras el reto, bajamos a nuestra bodega del s. XVI. Una cata premium de vinos locales y embutidos de la zona. Es el momento de relajar tensiones, analizar lo ocurrido en el juego y cerrar acuerdos.
+                    </p>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Privacidad total</span>
+                </div>
+
+                <div class="card-main p-8 upgrade-card">
+                    <div class="badge">UPGRADE OPCIONAL</div>
+                    <div class="icon-circle">🏠</div>
+                    <h3 class="font-serif text-xl mb-4 text-[#B8860B]">3. El Refugio</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        ¿Queréis estirar la jornada? Convertid la experiencia en un retiro completo. Disponed de <strong>El Poyo de Pura</strong> en exclusiva: 4 habitaciones y salón de reuniones para seguir trabajando o simplemente descansar.
+                    </p>
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#B8860B]">Toda la casa para vosotros</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-display text-4xl mb-12 text-[#5C1A1B]">Dos formas de vivir el Cónclave</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="text-left p-6 bg-gray-50 rounded">
+                    <h4 class="font-serif text-lg mb-3">La Jornada Intensiva</h4>
+                    <p class="text-sm text-gray-600">Perfecta para equipos que buscan una actividad potente de media jornada. <strong>Reto + Bodega.</strong> Ideal para motivar o celebrar metas.</p>
+                </div>
+                <div class="text-left p-6 bg-gray-50 rounded">
+                    <h4 class="font-serif text-lg mb-3 text-[#B8860B]">El Retiro Estratégico</h4>
+                    <p class="text-sm text-gray-600">Para quienes necesitan tiempo. <strong>Reto + Bodega + Alojamiento.</strong> Una inmersión total para planificar el año o resolver dinámicas complejas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section bg-[#2A2522] text-white">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="font-display text-4xl mb-4">Configura tu experiencia</h2>
+                <p class="opacity-70">Dinos si vienes por el día o si quieres que la casa sea vuestro cuartel general.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="highlight-card">
-                    <h3 class="font-serif text-[#B8860B] mb-3">Cohesión Real</h3>
-                    <p class="text-gray-700">Sacad al equipo de su zona de confort. La casa ofrece un ambiente relajado pero enfocado, ideal para conversaciones que no surgen en el día a día.</p>
+            <form class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Empresa" class="p-3 bg-white/10 border border-white/20 w-full">
+                    <input type="text" placeholder="Tu nombre" class="p-3 bg-white/10 border border-white/20 w-full">
                 </div>
-                <div class="highlight-card">
-                    <h3 class="font-serif text-[#B8860B] mb-3">Liderazgo Natural</h3>
-                    <p class="text-gray-700">Nuestras dinámicas están pensadas para observar roles, mejorar la comunicación interna y resolver conflictos de forma constructiva.</p>
-                </div>
-            </div>
+                <select class="p-3 bg-white/10 border border-white/20 w-full text-gray-400">
+                    <option value="">Tipo de reserva</option>
+                    <option value="solo-juego">Solo Jornada (Reto + Bodega)</option>
+                    <option value="con-casa">Retiro Completo (Reto + Bodega + Casa)</option>
+                </select>
+                <textarea rows="4" placeholder="¿Cuántos sois y qué objetivos tenéis?" class="p-3 bg-white/10 border border-white/20 w-full"></textarea>
+                <button type="submit" class="btn-main w-full py-4 text-lg">Pedir presupuesto</button>
+            </form>
         </div>
     </section>
-    
-    <section class="section bg-gray-50">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="step-card">
-                    <div class="icon-box">🏠</div>
-                    <h3 class="font-serif text-xl mb-4">1. El Refugio</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Alojamiento exclusivo en una casa auténtica en San Martín. Sin otros huéspedes. 4 habitaciones y sala de trabajo para que el equipo se sienta en su propio cuartel general.
-                    </p>
-                </div>
-                
-                <div class="step-card border-2 border-dashed border-[#B8860B]">
-                    <div class="icon-box" style="background: var(--dorado); color: white;">🎯</div>
-                    <h3 class="font-serif text-xl mb-4">2. Team Building</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        <strong>Actividad Autoguiada:</strong> Un reto por el entorno medieval usando GPS y lógica. No es una excursión, es un ejercicio de cooperación y toma de decisiones bajo presión.
-                    </p>
-                </div>
-                
-                <div class="step-card">
-                    <div class="icon-box">🍷</div>
-                    <h3 class="font-serif text-xl mb-4">3. La Conexión</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Cerramos la jornada en nuestra bodega histórica. Una cata de vinos y productos locales donde el equipo relaja tensiones y celebra los logros alcanzados.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="section section-wine">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="font-display text-4xl mb-8">¿Por qué este entorno?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div>
-                    <span class="block text-3xl mb-3">📵</span>
-                    <h4 class="font-bold mb-2">Desconexión</h4>
-                    <p class="text-sm opacity-80">Adiós al ruido digital. Hola al pensamiento profundo y la escucha activa.</p>
-                </div>
-                <div>
-                    <span class="block text-3xl mb-3">🤝</span>
-                    <h4 class="font-bold mb-2">Confianza</h4>
-                    <p class="text-sm opacity-80">Compartir un espacio auténtico humaniza los roles jerárquicos.</p>
-                </div>
-                <div>
-                    <span class="block text-3xl mb-3">💎</span>
-                    <h4 class="font-bold mb-2">Autenticidad</h4>
-                    <p class="text-sm opacity-80">No es un hotel de cristal. Es una experiencia con historia y carácter.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="contacto" class="section">
-        <div class="max-w-4xl mx-auto">
-            <div class="form-container shadow-2xl">
-                <div class="text-center mb-8">
-                    <h2 class="font-display text-3xl font-bold text-[#5C1A1B]">Diseñad vuestro retiro</h2>
-                    <p class="text-gray-500 mt-2">Contadnos qué objetivos tiene el equipo y os ayudamos a organizarlo.</p>
-                </div>
-                <form action="#">
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <input type="text" placeholder="Nombre de la empresa" required>
-                        <input type="text" placeholder="Responsable" required>
-                    </div>
-                    <input type="email" placeholder="Email corporativo" required>
-                    <select required>
-                        <option value="">¿Cuántos sois?</option>
-                        <option value="2-3">Círculo de 2-3 personas</option>
-                        <option value="4-5">Círculo de 4-5 personas</option>
-                    </select>
-                    <textarea rows="4" placeholder="¿Qué dinámica buscáis? (Estrategia pura, mejora de equipo, cierre de proyecto...)"></textarea>
-                    <button type="submit" class="btn-main w-full">Solicitar propuesta</button>
-                </form>
-                <p class="text-center text-xs text-gray-400 mt-4 uppercase tracking-widest">Máxima confidencialidad garantizada</p>
-            </div>
-        </div>
-    </section>
-    
-    <footer class="bg-[#2A2522] text-white py-12 text-center">
-        <p class="font-serif text-xl text-[#B8860B] mb-2">La Bodega Medieval</p>
-        <p class="text-sm opacity-50 mb-6 uppercase tracking-widest">El Cónclave de San Martín</p>
-        <div class="h-px bg-white/10 w-24 mx-auto mb-6"></div>
-        <p class="text-xs opacity-40">San Martín del Castañar, Sierra de Francia. Salamanca.</p>
+
+    <footer class="py-12 text-center bg-white">
+        <p class="font-serif text-xl text-[#B8860B]">La Bodega Medieval</p>
+        <p class="text-xs text-gray-400 mt-2 uppercase tracking-widest">San Martín del Castañar | Sierra de Francia</p>
     </footer>
 
 </body>
