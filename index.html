@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -20,6 +20,9 @@
                     fontFamily: {
                         serif: ['Playfair Display', 'serif'],
                         sans: ['Montserrat', 'sans-serif']
+                    },
+                    spacing: {
+                        '18': '4.5rem',
                     }
                 }
             }
@@ -44,332 +47,246 @@
             background:
                 radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.08) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(184, 134, 11, 0.05) 0%, transparent 50%);
-            animation: pulse 8s ease-in-out infinite;
+            animation: pulse 12s ease-in-out infinite;
         }
         @keyframes pulse {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+            50% { opacity: 0.75; }
         }
         .luxury-divider {
             height: 2px;
-            background: linear-gradient(90deg, transparent 0%, #B8860B 20%, #B8860B 80%, transparent 100%);
+            background: linear-gradient(90deg, transparent 0%, #B8860B 30%, #B8860B 70%, transparent 100%);
             position: relative;
         }
         .luxury-divider::before {
             content: '';
             position: absolute;
-            top: -3px;
+            top: -4px;
             left: 50%;
             transform: translateX(-50%);
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
             background: #B8860B;
             border-radius: 50%;
         }
         input, select, textarea {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             font-weight: 300;
-            letter-spacing: 0.02em;
         }
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: #B8860B;
-            box-shadow: 0 0 0 4px rgba(184, 134, 11, 0.08);
-            transform: translateY(-1px);
+            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.12);
         }
         .btn-primary {
             background: linear-gradient(135deg, #B8860B 0%, #9a7109 100%);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            font-weight: 500;
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        .btn-primary:hover::before {
-            left: 100%;
+            transition: all 0.35s ease;
+            min-height: 56px; /* mejor touch target */
         }
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(184, 134, 11, 0.4);
-        }
-        .card-elegant {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            background: white;
-        }
-        .card-elegant::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #B8860B, #d4a017);
-            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .card-elegant:hover::after {
-            width: 100%;
-        }
-        .card-elegant:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 50px rgba(92, 26, 27, 0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(184, 134, 11, 0.35);
         }
         .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-            width: 65px;
-            height: 65px;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: float 3s ease-in-out infinite;
+            bottom: 20px;
+            right: 20px;
+            width: 58px;
+            height: 58px;
         }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+        @media (max-width: 640px) {
+            h1 { font-size: 3.5rem; line-height: 1.05; }
+            h2 { font-size: 2.5rem; }
+            .text-xl { font-size: 1.125rem; }
+            .py-32 { padding-top: 5rem; padding-bottom: 5rem; }
+            .py-16 { padding-top: 3rem; padding-bottom: 3rem; }
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .animate-in {
-            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-        .delay-1 { animation-delay: 0.15s; opacity: 0; }
-        .delay-2 { animation-delay: 0.3s; opacity: 0; }
-        .delay-3 { animation-delay: 0.45s; opacity: 0; }
-        .delay-4 { animation-delay: 0.6s; opacity: 0; }
-        .section-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 120px;
-            font-weight: 300;
-            color: rgba(184, 134, 11, 0.06);
-            position: absolute;
-            top: -40px;
-            left: 20px;
-            line-height: 1;
-            pointer-events: none;
-        }
-        .highlight-box {
-            border-left: 4px solid #B8860B;
-            background: linear-gradient(90deg, rgba(184, 134, 11, 0.03) 0%, transparent 100%);
+        img.photo {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
     </style>
 </head>
 <body class="bg-crema text-gray-900 antialiased">
 
     <!-- Hero -->
-    <section class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div class="absolute inset-0 z-0 opacity-10">
-            <div class="absolute top-20 right-20 w-96 h-96 bg-dorado rounded-full blur-3xl"></div>
-            <div class="absolute bottom-20 left-20 w-96 h-96 bg-dorado rounded-full blur-3xl"></div>
-        </div>
-        <div class="container mx-auto px-6 py-20 relative z-10">
-            <div class="max-w-5xl mx-auto text-center">
-                <div class="mb-8 animate-in">
-                    <span class="text-dorado text-sm tracking-[0.3em] uppercase font-light">San Martín del Castañar · Salamanca</span>
+    <section class="hero-bg min-h-[80vh] sm:min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-10"></div>
+        <div class="container mx-auto px-5 sm:px-6 py-16 sm:py-20 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-6 animate-in">
+                    <span class="text-dorado text-xs sm:text-sm tracking-[0.25em] uppercase font-light">San Martín del Castañar · Salamanca</span>
                 </div>
-                <h1 class="font-serif text-6xl md:text-8xl font-bold text-crema mb-8 leading-tight animate-in delay-1" style="letter-spacing: -0.02em;">
+                <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl font-bold text-crema mb-6 leading-tight animate-in delay-1" style="letter-spacing: -0.025em;">
                     El Cónclave<br>de San Martín
                 </h1>
-                <div class="luxury-divider max-w-xs mx-auto mb-10 animate-in delay-2"></div>
-                <p class="text-xl md:text-2xl text-crema/90 max-w-4xl mx-auto mb-6 font-light leading-relaxed animate-in delay-3">
-                    Un día que empieza con misterio… y termina con risas, miradas cómplices y una copa en la mano bajo bóvedas medievales.
+                <div class="luxury-divider max-w-xs mx-auto mb-8 animate-in delay-2"></div>
+                <p class="text-lg sm:text-xl md:text-2xl text-crema/90 max-w-3xl mx-auto mb-6 font-light leading-relaxed animate-in delay-3">
+                    Misterio por la mañana…<br class="sm:hidden"> risas y brindis bajo bóvedas medievales al atardecer.
                 </p>
-                <p class="text-lg text-crema/80 max-w-3xl mx-auto mb-12 font-light animate-in delay-3">
-                    Team building que no se olvida. Juego de misterio + bodega como clímax. Hasta 15 personas. Para equipos que quieren volver diferentes.
+                <p class="text-base sm:text-lg text-crema/80 max-w-2xl mx-auto mb-10 font-light animate-in delay-3">
+                    Team building real. Hasta 15 personas. Un día que cambia equipos.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-5 justify-center animate-in delay-4">
-                    <a href="#contacto" class="btn-primary inline-block px-14 py-5 text-white font-medium rounded-none text-base tracking-wider">
-                        Quiero esta experiencia para mi equipo
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-in delay-4">
+                    <a href="#contacto" class="btn-primary inline-flex items-center justify-center px-10 sm:px-12 py-5 text-white font-medium rounded-none text-base sm:text-lg tracking-wider min-w-[240px]">
+                        Quiero esta experiencia
                     </a>
-                    <a href="https://wa.me/34623022323?text=Hola%2C%20quiero%20saber%20más%20sobre%20El%20C%C3%B3nclave%20de%20San%20Mart%C3%ADn" target="_blank" class="inline-block px-14 py-5 text-crema border-2 border-crema/40 font-medium rounded-none text-base tracking-wider hover:bg-crema/10 transition-all duration-300">
-                        Hablar ahora por WhatsApp
+                    <a href="https://wa.me/34623022323?text=Hola%2C%20quiero%20saber%20más%20sobre%20El%20C%C3%B3nclave" target="_blank" class="inline-flex items-center justify-center px-10 sm:px-12 py-5 text-crema border-2 border-crema/50 font-medium rounded-none text-base sm:text-lg tracking-wider hover:bg-crema/10 transition-all min-w-[240px]">
+                        Hablar por WhatsApp
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- La Experiencia -->
-    <section class="py-32 bg-white relative">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-20">
-                <span class="text-dorado text-sm tracking-[0.3em] uppercase font-light mb-4 block">La experiencia</span>
-                <h2 class="font-serif text-5xl md:text-6xl font-bold text-granate mb-6" style="letter-spacing: -0.02em;">Dos partes. Un solo día inolvidable.</h2>
+    <!-- Galería intro -->
+    <section class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-5 sm:px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 max-w-6xl mx-auto">
+                <img loading="lazy" src="https://www.labodegamedieval.es/wp-content/uploads/2023/10/bodega-medieval-interior-1.jpg" alt="Bodega medieval piedra y toneles" class="photo">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Equipo resolviendo pistas en calle medieval" class="photo">
+                <img loading="lazy" src="https://www.labodegamedieval.es/wp-content/uploads/2023/10/cata-vinos-bodega-medieval.jpg" alt="Cata de vinos íntima en bodega" class="photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia principal -->
+    <section class="py-20 sm:py-32 bg-white">
+        <div class="container mx-auto px-5 sm:px-6">
+            <div class="text-center mb-12 sm:mb-20">
+                <span class="text-dorado text-xs sm:text-sm tracking-[0.3em] uppercase font-light mb-3 block">La experiencia</span>
+                <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-granate mb-4 sm:mb-6" style="letter-spacing: -0.02em;">
+                    Dos momentos.<br class="sm:hidden"> Un día inolvidable.
+                </h2>
                 <div class="luxury-divider max-w-xs mx-auto"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <div class="card-elegant bg-white p-12 relative group border-2 border-dorado">
-                    <span class="section-number">01</span>
-                    <div class="w-16 h-16 bg-granate rounded-full flex items-center justify-center mb-8 mx-auto">
-                        <svg class="w-8 h-8 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-serif text-4xl font-bold text-granate mb-6 text-center">Juego de Misterio por San Martín</h3>
-                    <p class="text-gray-700 text-lg leading-relaxed font-light text-center mb-8">
-                        Calles empedradas, pistas ocultas, decisiones que unen o separan. Tu equipo se divide, compite, negocia… y descubre quiénes son realmente cuando las máscaras caen.
+            <div class="grid md:grid-cols-2 gap-10 sm:gap-12 max-w-5xl mx-auto">
+                <!-- Juego -->
+                <div class="card-elegant p-8 sm:p-12 border-2 border-dorado">
+                    <span class="section-number hidden sm:block">01</span>
+                    <h3 class="font-serif text-3xl sm:text-4xl font-bold text-granate mb-5 text-center">Juego de Misterio</h3>
+                    <p class="text-gray-700 text-base sm:text-lg leading-relaxed text-center mb-6">
+                        Calles antiguas, pistas escondidas, decisiones que unen. Tu equipo descubre quiénes son de verdad.
                     </p>
-                    <ul class="space-y-4 text-gray-700 font-light max-w-md mx-auto">
-                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Dinámicas bajo presión real</li>
-                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Revela líderes, comunicadores, mediadores</li>
-                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Momentos de risa, tensión y euforia</li>
+                    <ul class="space-y-3 text-gray-700 font-light text-sm sm:text-base mx-auto max-w-sm">
+                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Presión real y risas</li>
+                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Revela líderes y mediadores</li>
+                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Conexión inmediata</li>
                     </ul>
                 </div>
 
-                <div class="card-elegant bg-white p-12 relative group border-2 border-dorado">
-                    <span class="section-number">02</span>
-                    <div class="w-16 h-16 bg-granate rounded-full flex items-center justify-center mb-8 mx-auto">
-                        <svg class="w-8 h-8 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-serif text-4xl font-bold text-granate mb-6 text-center">Bodega Medieval – El Clímax</h3>
-                    <p class="text-gray-700 text-lg leading-relaxed font-light text-center mb-8">
-                        Luces tenues, piedra centenaria, aromas que envuelven. Aquí se cierran acuerdos, se brindan por lo vivido y se sella lo que el juego ha despertado. El momento en que el equipo se siente uno.
+                <!-- Bodega -->
+                <div class="card-elegant p-8 sm:p-12 border-2 border-dorado">
+                    <span class="section-number hidden sm:block">02</span>
+                    <h3 class="font-serif text-3xl sm:text-4xl font-bold text-granate mb-5 text-center">Bodega Medieval</h3>
+                    <p class="text-gray-700 text-base sm:text-lg leading-relaxed text-center mb-6">
+                        Piedra centenaria, aromas profundos, brindis compartidos. El cierre donde todo encaja y se celebra.
                     </p>
-                    <ul class="space-y-4 text-gray-700 font-light max-w-md mx-auto">
-                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Cata guiada de vinos de la zona</li>
-                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Reflexión guiada + cierre emocional</li>
-                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Brindis que se recuerdan años después</li>
+                    <ul class="space-y-3 text-gray-700 font-light text-sm sm:text-base mx-auto max-w-sm">
+                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Cata guiada de vinos locales</li>
+                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Reflexión + cierre emocional</li>
+                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Brindis que se recuerdan</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="max-w-4xl mx-auto mt-16 text-center">
-                <p class="text-2xl text-granate font-light italic leading-relaxed">
-                    “No es solo un team building. Es el día en que tu equipo dejó de ser un grupo… y empezó a ser un equipo de verdad.”
+            <div class="mt-12 sm:mt-16 text-center">
+                <p class="text-xl sm:text-2xl text-granate font-light italic px-4">
+                    “El día en que dejamos de ser un grupo… y empezamos a ser un equipo.”
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opcionales -->
+    <section class="py-16 sm:py-24 bg-crema">
+        <div class="container mx-auto px-5 sm:px-6">
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-granate text-center mb-10 sm:mb-16">Opciones para completar el día</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Casa rural acogedora" class="photo mb-5">
+                    <h3 class="font-serif text-2xl font-bold text-granate mb-3 text-center">+ Alojamiento</h3>
+                    <p class="text-gray-700 text-center text-sm sm:text-base">Noche en casa rural completa para prolongar la conexión.</p>
+                </div>
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+                    <img loading="lazy" src="https://hotelportacoeli.es/wp-content/uploads/2023/05/arroz-porta-coeli.jpg" alt="Plato serrano Porta Coeli" class="photo mb-5">
+                    <h3 class="font-serif text-2xl font-bold text-granate mb-3 text-center">+ Comida</h3>
+                    <p class="text-gray-700 text-center text-sm sm:text-base">Menú serrano local (opción vegetariana) para celebrar.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Ventajas -->
-    <section class="py-32 bg-crema relative overflow-hidden">
-        <div class="absolute inset-0 opacity-5 pointer-events-none">
-            <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-dorado rounded-full blur-3xl"></div>
-        </div>
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-5xl mx-auto">
-                <div class="text-center mb-16">
-                    <span class="text-dorado text-sm tracking-[0.3em] uppercase font-light mb-4 block">Por qué funciona</span>
-                    <h2 class="font-serif text-5xl md:text-6xl font-bold text-granate mb-6" style="letter-spacing: -0.02em;">Lo que hace diferente este día</h2>
-                    <div class="luxury-divider max-w-xs mx-auto"></div>
+    <section class="py-16 sm:py-24 bg-white">
+        <div class="container mx-auto px-5 sm:px-6">
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-granate text-center mb-10 sm:mb-16">Por qué este día funciona</h2>
+            <div class="grid sm:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
+                <div class="text-center p-6 bg-crema/50 rounded-xl">
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-granate mb-3">A 45 min de Salamanca</h3>
+                    <p class="text-gray-700 text-sm sm:text-base">Vuelta a casa el mismo día, sin complicaciones.</p>
                 </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <div class="highlight-box pl-8 py-10 bg-white shadow-xl">
-                        <h3 class="font-serif text-2xl font-bold text-granate mb-4">A 45 min de Salamanca</h3>
-                        <p class="text-gray-700 leading-relaxed">Llegas por la mañana, vives la transformación y vuelves a casa con el corazón lleno. Sin noches fuera.</p>
-                    </div>
-                    <div class="highlight-box pl-8 py-10 bg-white shadow-xl">
-                        <h3 class="font-serif text-2xl font-bold text-granate mb-4">Privacidad absoluta</h3>
-                        <p class="text-gray-700 leading-relaxed">Todo el espacio es solo para tu equipo. Sin otros grupos, sin interrupciones. Solo vosotros.</p>
-                    </div>
-                    <div class="highlight-box pl-8 py-10 bg-white shadow-xl">
-                        <h3 class="font-serif text-2xl font-bold text-granate mb-4">Hasta 15 personas</h3>
-                        <p class="text-gray-700 leading-relaxed">Tamaño perfecto: íntimo para conectar de verdad, pero suficiente para que surjan dinámicas potentes.</p>
-                    </div>
+                <div class="text-center p-6 bg-crema/50 rounded-xl">
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-granate mb-3">Solo para tu equipo</h3>
+                    <p class="text-gray-700 text-sm sm:text-base">Privacidad total. Sin distracciones externas.</p>
+                </div>
+                <div class="text-center p-6 bg-crema/50 rounded-xl">
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-granate mb-3">4–15 personas</h3>
+                    <p class="text-gray-700 text-sm sm:text-base">Tamaño ideal para conectar de verdad.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA + Formulario -->
-    <section id="contacto" class="py-32 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="font-serif text-5xl md:text-6xl font-bold text-granate mb-6" style="letter-spacing: -0.02em;">
-                    ¿Listo para un día que cambie a tu equipo?
+    <!-- Formulario -->
+    <section id="contacto" class="py-16 sm:py-32 bg-white">
+        <div class="container mx-auto px-5 sm:px-6">
+            <div class="max-w-xl mx-auto text-center">
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-granate mb-6">
+                    ¿Listo para cambiar a tu equipo?
                 </h2>
-                <p class="text-xl text-gray-700 mb-12 font-light">
-                    Déjanos tus datos y en menos de 24 h te enviamos una propuesta personalizada con fechas, precio y todo lo que necesitas saber.
+                <p class="text-lg sm:text-xl text-gray-700 mb-10 sm:mb-12">
+                    Déjanos tus datos. En <24 h tienes propuesta personalizada.
                 </p>
 
-                <form name="conclave-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-8 bg-crema p-12 md:p-16 shadow-xl">
+                <form name="conclave-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6 bg-crema p-6 sm:p-10 md:p-12 shadow-xl rounded-xl">
                     <input type="hidden" name="form-name" value="conclave-contact" />
-                    <p class="hidden"><label>No llenar: <input name="bot-field" /></label></p>
+                    <p class="hidden"><label>Bot: <input name="bot-field" /></label></p>
 
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <label class="block text-xs tracking-wider text-granate mb-3 uppercase font-medium">Nombre</label>
-                            <input type="text" name="nombre" required class="w-full px-5 py-4 border-b-2 border-gray-300 bg-transparent focus:border-dorado font-light">
-                        </div>
-                        <div>
-                            <label class="block text-xs tracking-wider text-granate mb-3 uppercase font-medium">Email</label>
-                            <input type="email" name="email" required class="w-full px-5 py-4 border-b-2 border-gray-300 bg-transparent focus:border-dorado font-light">
-                        </div>
-                    </div>
+                    <input type="text" name="nombre" required placeholder="Nombre" class="w-full px-5 py-4 border-b-2 border-gray-400 bg-transparent focus:border-dorado">
+                    <input type="email" name="email" required placeholder="Email profesional" class="w-full px-5 py-4 border-b-2 border-gray-400 bg-transparent focus:border-dorado">
+                    <input type="text" name="empresa" required placeholder="Empresa" class="w-full px-5 py-4 border-b-2 border-gray-400 bg-transparent focus:border-dorado">
+                    <input type="tel" name="telefono" required placeholder="Teléfono" class="w-full px-5 py-4 border-b-2 border-gray-400 bg-transparent focus:border-dorado">
 
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <label class="block text-xs tracking-wider text-granate mb-3 uppercase font-medium">Empresa</label>
-                            <input type="text" name="empresa" required class="w-full px-5 py-4 border-b-2 border-gray-300 bg-transparent focus:border-dorado font-light">
-                        </div>
-                        <div>
-                            <label class="block text-xs tracking-wider text-granate mb-3 uppercase font-medium">Teléfono</label>
-                            <input type="tel" name="telefono" required class="w-full px-5 py-4 border-b-2 border-gray-300 bg-transparent focus:border-dorado font-light">
-                        </div>
-                    </div>
+                    <select name="asistentes" required class="w-full px-5 py-4 border-b-2 border-gray-400 bg-transparent focus:border-dorado">
+                        <option value="">Número de personas (4-15)</option>
+                        <option value="4">4 personas</option>
+                        <option value="5">5 personas</option>
+                        <option value="6">6 personas</option>
+                        <option value="7">7 personas</option>
+                        <option value="8">8 personas</option>
+                        <option value="9">9 personas</option>
+                        <option value="10">10 personas</option>
+                        <option value="11">11 personas</option>
+                        <option value="12">12 personas</option>
+                        <option value="13">13 personas</option>
+                        <option value="14">14 personas</option>
+                        <option value="15">15 personas</option>
+                    </select>
 
-                    <div>
-                        <label class="block text-xs tracking-wider text-granate mb-3 uppercase font-medium">Número aproximado de personas</label>
-                        <select name="asistentes" required class="w-full px-5 py-4 border-b-2 border-gray-300 bg-transparent focus:border-dorado font-light cursor-pointer">
-                            <option value="">Seleccionar...</option>
-                            <option value="6-10">6 – 10 personas</option>
-                            <option value="11-15">11 – 15 personas</option>
-                        </select>
-                        <p class="text-xs text-gray-500 mt-2">Máximo 15 personas para mantener la intensidad y la magia.</p>
-                    </div>
+                    <textarea name="objetivos" rows="3" placeholder="¿Qué queréis conseguir con este día?" class="w-full px-5 py-4 border-b-2 border-gray-400 bg-transparent focus:border-dorado resize-none"></textarea>
 
-                    <div>
-                        <label class="block text-xs tracking-wider text-granate mb-3 uppercase font-medium">¿Qué queréis conseguir con este día?</label>
-                        <textarea name="objetivos" rows="4" class="w-full px-5 py-4 border-b-2 border-gray-300 bg-transparent focus:border-dorado font-light resize-none" placeholder="Ej: mejorar comunicación, fortalecer confianza, celebrar logros, integrar nuevo equipo..."></textarea>
-                    </div>
+                    <input type="text" name="fechas" placeholder="Fechas aproximadas (opcional)" class="w-full px-5 py-4 border-b-2 border-gray-400 bg-transparent focus:border-dorado">
 
-                    <div>
-                        <label class="block text-xs tracking-wider text-granate mb-3 uppercase font-medium">Fechas aproximadas que os interesan (opcional)</label>
-                        <input type="text" name="fechas" class="w-full px-5 py-4 border-b-2 border-gray-300 bg-transparent focus:border-dorado font-light" placeholder="Ej: Marzo-abril 2026 o cualquier fin de semana">
-                    </div>
+                    <button type="submit" class="btn-primary w-full py-5 text-white font-medium text-lg tracking-wider mt-4">
+                        Recibir propuesta personalizada
+                    </button>
 
-                    <div class="pt-8">
-                        <button type="submit" class="btn-primary w-full py-6 text-white font-medium text-lg tracking-wider">
-                            Enviar y recibir mi propuesta personalizada
-                        </button>
-                    </div>
-
-                    <p class="text-sm text-gray-500 text-center mt-4 font-light">
-                        Te contestamos en menos de 24 horas con todo detallado
+                    <p class="text-sm text-gray-600 text-center mt-4">
+                        Respuesta en menos de 24 horas
                     </p>
                 </form>
             </div>
@@ -377,22 +294,22 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-granate text-crema py-16">
-        <div class="container mx-auto px-6 text-center">
-            <h3 class="font-serif text-3xl font-bold mb-6">El Cónclave de San Martín</h3>
-            <p class="text-crema/80 mb-4">Un día para recordar. Un equipo para siempre.</p>
-            <p class="text-crema/60 text-sm">
+    <footer class="bg-granate text-crema py-12">
+        <div class="container mx-auto px-5 sm:px-6 text-center">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold mb-4">El Cónclave de San Martín</h3>
+            <p class="text-crema/80 text-sm sm:text-base mb-3">Un día para recordar. Un equipo para siempre.</p>
+            <p class="text-crema/70 text-xs sm:text-sm mb-6">
                 San Martín del Castañar, Salamanca · +34 623 022 323
             </p>
-            <p class="text-crema/40 text-xs mt-8">
-                2026 © El Cónclave de San Martín
+            <p class="text-crema/50 text-xs">
+                2026 © El Cónclave de San Martín · Creado por @alexromanleis
             </p>
         </div>
     </footer>
 
-    <!-- WhatsApp flotante -->
-    <a href="https://wa.me/34623022323?text=Hola%2C%20quiero%20reservar%20El%20C%C3%B3nclave%20para%20mi%20equipo" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
-        <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/34623022323?text=Hola%2C%20quiero%20saber%20más%20sobre%20El%20C%C3%B3nclave" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
     </a>
