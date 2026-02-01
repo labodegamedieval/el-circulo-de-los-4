@@ -1,0 +1,18 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build]
+  publish = "."
+
+# Configuración de formularios
+[[plugins]]
+  package = "@netlify/plugin-form-notifications"
+
+[plugins.inputs]
+  email = "tu-email@ejemplo.com"
+  
+# Notificaciones de formularios
+[build.processing.html]
+  pretty_urls = true

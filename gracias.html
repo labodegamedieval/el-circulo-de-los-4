@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias por tu interés | El Cónclave de San Martín</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        granate: '#5C1A1B',
+                        dorado: '#B8860B',
+                        crema: '#FAF8F3'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #FAF8F3;
+        }
+        .hero-bg {
+            background: linear-gradient(160deg, #1a0506 0%, #5C1A1B 50%, #3d1213 100%);
+        }
+    </style>
+</head>
+<body class="bg-crema">
+    <section class="hero-bg min-h-screen flex items-center justify-center">
+        <div class="container mx-auto px-6 py-20 text-center">
+            <div class="max-w-2xl mx-auto">
+                <div class="mb-8">
+                    <svg class="w-20 h-20 mx-auto text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                
+                <h1 class="font-serif text-5xl md:text-6xl font-bold text-crema mb-6">
+                    ¡Gracias!
+                </h1>
+                
+                <p class="text-xl text-crema/90 mb-8 leading-relaxed">
+                    Hemos recibido tu solicitud correctamente.
+                </p>
+                
+                <p class="text-lg text-crema/80 mb-12">
+                    Te enviaremos una propuesta personalizada en menos de 24 horas.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/el-conclave.html" class="inline-flex items-center justify-center px-10 py-5 bg-dorado text-white font-medium rounded-none text-lg tracking-wider hover:bg-opacity-90 transition-all">
+                        Volver al inicio
+                    </a>
+                    <a href="https://wa.me/34623022323?text=Acabo%20de%20enviar%20el%20formulario" target="_blank" class="inline-flex items-center justify-center px-10 py-5 text-crema border-2 border-crema/50 font-medium rounded-none text-lg tracking-wider hover:bg-crema/10 transition-all">
+                        Escríbenos por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
