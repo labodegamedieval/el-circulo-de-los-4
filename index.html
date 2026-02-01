@@ -13,9 +13,11 @@
             theme: {
                 extend: {
                     colors: {
-                        granate: '#5C1A1B',
-                        dorado: '#B8860B',
-                        crema: '#FAF8F3'
+                        'carbon': '#0F0F0F',
+                        'granate-dark': '#2A0A0B',
+                        'dorado-premium': '#D4AF37',
+                        'crema-suave': '#EDE4D9',
+                        'gris-oscuro': '#1A1A1A'
                     },
                     fontFamily: {
                         serif: ['Playfair Display', 'serif'],
@@ -32,11 +34,12 @@
         * { scroll-behavior: smooth; }
         body {
             font-family: 'Montserrat', sans-serif;
-            background: #FAF8F3;
+            background: #0F0F0F;
+            color: #EDE4D9;
             letter-spacing: 0.01em;
         }
         .hero-bg {
-            background: linear-gradient(160deg, #1a0506 0%, #5C1A1B 50%, #3d1213 100%);
+            background: linear-gradient(135deg, #0F0F0F 0%, #1A0A0B 40%, #2A0A0B 100%);
             position: relative;
             overflow: hidden;
         }
@@ -45,64 +48,106 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(184, 134, 11, 0.05) 0%, transparent 50%);
-            animation: pulse 12s ease-in-out infinite;
+                radial-gradient(circle at 20% 30%, rgba(212,175,55,0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212,175,55,0.03) 0%, transparent 50%);
+            animation: pulse 16s ease-in-out infinite;
+            z-index: 0;
         }
         @keyframes pulse {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.75; }
+            50% { opacity: 0.7; }
         }
         .luxury-divider {
             height: 2px;
-            background: linear-gradient(90deg, transparent 0%, #B8860B 30%, #B8860B 70%, transparent 100%);
+            background: linear-gradient(90deg, transparent 0%, #D4AF37 30%, #D4AF37 70%, transparent 100%);
             position: relative;
         }
         .luxury-divider::before {
             content: '';
             position: absolute;
-            top: -4px;
+            top: -5px;
             left: 50%;
             transform: translateX(-50%);
-            width: 10px;
-            height: 10px;
-            background: #B8860B;
+            width: 12px;
+            height: 12px;
+            background: #D4AF37;
             border-radius: 50%;
+            box-shadow: 0 0 8px rgba(212,175,55,0.4);
         }
         input, select, textarea {
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             font-weight: 300;
+            border-color: rgba(237,228,217,0.3);
+            background: rgba(237,228,217,0.05);
+            color: #EDE4D9;
         }
         input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: #B8860B;
-            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.12);
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
+            background: rgba(237,228,217,0.1);
         }
         input[type="date"] {
-            color-scheme: light;
+            color-scheme: dark;
             cursor: pointer;
         }
         input[type="date"]::-webkit-calendar-picker-indicator {
             cursor: pointer;
-            filter: opacity(0.7);
-        }
-        input[type="date"]::-webkit-calendar-picker-indicator:hover {
-            filter: opacity(1);
+            filter: invert(1) sepia(1) saturate(0.5) hue-rotate(40deg);
         }
         .btn-primary {
-            background: linear-gradient(135deg, #B8860B 0%, #9a7109 100%);
-            transition: all 0.35s ease;
+            background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+            color: #0F0F0F;
+            transition: all 0.4s ease;
             min-height: 56px;
+            box-shadow: 0 4px 15px rgba(212,175,55,0.25);
         }
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(184, 134, 11, 0.35);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(212,175,55,0.4);
+            background: linear-gradient(135deg, #E0B947 0%, #D4AF37 100%);
         }
         .whatsapp-float {
             bottom: 20px;
             right: 20px;
             width: 58px;
             height: 58px;
+            background: #25D366;
+            border-radius: 50%;
+            box-shadow: 0 10px 25px rgba(37,211,102,0.3);
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(37,211,102,0.4);
+        }
+        img.photo {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+            filter: brightness(0.85) contrast(1.1);
+            transition: all 0.4s ease;
+        }
+        img.photo:hover {
+            filter: brightness(1) contrast(1.15);
+            transform: translateY(-4px);
+        }
+        .card-elegant {
+            background: rgba(237,228,217,0.05);
+            border: 1px solid rgba(212,175,55,0.15);
+            transition: all 0.3s ease;
+        }
+        .card-elegant:hover {
+            background: rgba(237,228,217,0.08);
+            border-color: #D4AF37;
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(212,175,55,0.1);
+        }
+        footer {
+            background: #0F0F0F;
+            border-top: 1px solid rgba(212,175,55,0.1);
         }
         @media (max-width: 640px) {
             h1 { font-size: 3.5rem; line-height: 1.05; }
@@ -111,40 +156,33 @@
             .py-32 { padding-top: 5rem; padding-bottom: 5rem; }
             .py-16 { padding-top: 3rem; padding-bottom: 3rem; }
         }
-        img.photo {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-        }
     </style>
 </head>
-<body class="bg-crema text-gray-900 antialiased">
+<body class="bg-carbon text-crema-suave antialiased">
 
     <!-- Hero -->
     <section class="hero-bg min-h-[80vh] sm:min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div class="absolute inset-0 z-0 opacity-10"></div>
+        <div class="absolute inset-0 z-0"></div>
         <div class="container mx-auto px-5 sm:px-6 py-16 sm:py-20 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
                 <div class="mb-6 animate-in">
-                    <span class="text-dorado text-xs sm:text-sm tracking-[0.25em] uppercase font-light">San Martín del Castañar · Salamanca</span>
+                    <span class="text-dorado-premium text-xs sm:text-sm tracking-[0.25em] uppercase font-light">San Martín del Castañar · Salamanca</span>
                 </div>
-                <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl font-bold text-crema mb-6 leading-tight animate-in delay-1" style="letter-spacing: -0.025em;">
-                    El Cónclave<br>de San Martín
+                <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl font-bold text-crema-suave mb-6 leading-tight animate-in delay-1" style="letter-spacing: -0.025em;">
+                    El Cónclave<br class="sm:hidden">de San Martín
                 </h1>
                 <div class="luxury-divider max-w-xs mx-auto mb-8 animate-in delay-2"></div>
-                <p class="text-lg sm:text-xl md:text-2xl text-crema/90 max-w-3xl mx-auto mb-6 font-light leading-relaxed animate-in delay-3">
+                <p class="text-lg sm:text-xl md:text-2xl text-crema-suave/90 max-w-3xl mx-auto mb-6 font-light leading-relaxed animate-in delay-3">
                     Misterio por la mañana…<br class="sm:hidden"> risas y brindis bajo bóvedas medievales al atardecer.
                 </p>
-                <p class="text-base sm:text-lg text-crema/80 max-w-2xl mx-auto mb-10 font-light animate-in delay-3">
+                <p class="text-base sm:text-lg text-crema-suave/80 max-w-2xl mx-auto mb-10 font-light animate-in delay-3">
                     Team building real. Grupos de 4 a 15 personas. Un día que cambia equipos.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center animate-in delay-4">
                     <a href="#contacto" class="btn-primary inline-flex items-center justify-center px-10 sm:px-12 py-5 text-white font-medium rounded-none text-base sm:text-lg tracking-wider min-w-[240px]">
                         Quiero esta experiencia
                     </a>
-                    <a href="https://wa.me/34623022323?text=Hola%2C%20quiero%20saber%20más%20sobre%20El%20C%C3%B3nclave" target="_blank" class="inline-flex items-center justify-center px-10 sm:px-12 py-5 text-crema border-2 border-crema/50 font-medium rounded-none text-base sm:text-lg tracking-wider hover:bg-crema/10 transition-all min-w-[240px]">
+                    <a href="https://wa.me/34623022323?text=Hola%2C%20quiero%20saber%20más%20sobre%20El%20C%C3%B3nclave" target="_blank" class="inline-flex items-center justify-center px-10 sm:px-12 py-5 text-crema-suave border-2 border-crema-suave/50 font-medium rounded-none text-base sm:text-lg tracking-wider hover:bg-crema-suave/10 transition-all min-w-[240px]">
                         Hablar por WhatsApp
                     </a>
                 </div>
@@ -153,7 +191,7 @@
     </section>
 
     <!-- Galería intro -->
-    <section class="py-12 sm:py-16 bg-white">
+    <section class="py-12 sm:py-16 bg-gris-oscuro">
         <div class="container mx-auto px-5 sm:px-6">
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 max-w-6xl mx-auto">
                 <img loading="lazy" src="images/bodega-cueva.jpeg" alt="Bodega medieval piedra y toneles" class="photo">
@@ -164,48 +202,45 @@
     </section>
 
     <!-- Experiencia principal -->
-    <section class="py-20 sm:py-32 bg-white">
+    <section class="py-20 sm:py-32 bg-gris-oscuro">
         <div class="container mx-auto px-5 sm:px-6">
             <div class="text-center mb-12 sm:mb-20">
-                <span class="text-dorado text-xs sm:text-sm tracking-[0.3em] uppercase font-light mb-3 block">La experiencia</span>
-                <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-granate mb-4 sm:mb-6" style="letter-spacing: -0.02em;">
+                <span class="text-dorado-premium text-xs sm:text-sm tracking-[0.3em] uppercase font-light mb-3 block">La experiencia</span>
+                <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-crema-suave mb-4 sm:mb-6" style="letter-spacing: -0.02em;">
                     Dos momentos.<br class="sm:hidden"> Un día inolvidable.
                 </h2>
                 <div class="luxury-divider max-w-xs mx-auto"></div>
             </div>
-
             <div class="grid md:grid-cols-2 gap-10 sm:gap-12 max-w-5xl mx-auto">
                 <!-- Juego -->
-                <div class="card-elegant p-8 sm:p-12 border-2 border-dorado">
+                <div class="card-elegant p-8 sm:p-12 border-2 border-dorado-premium">
                     <span class="section-number hidden sm:block">01</span>
-                    <h3 class="font-serif text-3xl sm:text-4xl font-bold text-granate mb-5 text-center">Juego de Misterio</h3>
-                    <p class="text-gray-700 text-base sm:text-lg leading-relaxed text-center mb-6">
+                    <h3 class="font-serif text-3xl sm:text-4xl font-bold text-crema-suave mb-5 text-center">Juego de Misterio</h3>
+                    <p class="text-crema-suave/80 text-base sm:text-lg leading-relaxed text-center mb-6">
                         Calles antiguas, pistas escondidas, decisiones que unen. Tu equipo descubre quiénes son de verdad.
                     </p>
-                    <ul class="space-y-3 text-gray-700 font-light text-sm sm:text-base mx-auto max-w-sm">
-                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Presión real y risas</li>
-                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Revela líderes y mediadores</li>
-                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Conexión inmediata</li>
+                    <ul class="space-y-3 text-crema-suave/70 font-light text-sm sm:text-base mx-auto max-w-sm">
+                        <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span> Presión real y risas</li>
+                        <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span> Revela líderes y mediadores</li>
+                        <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span> Conexión inmediata</li>
                     </ul>
                 </div>
-
                 <!-- Bodega -->
-                <div class="card-elegant p-8 sm:p-12 border-2 border-dorado">
+                <div class="card-elegant p-8 sm:p-12 border-2 border-dorado-premium">
                     <span class="section-number hidden sm:block">02</span>
-                    <h3 class="font-serif text-3xl sm:text-4xl font-bold text-granate mb-5 text-center">Bodega Medieval</h3>
-                    <p class="text-gray-700 text-base sm:text-lg leading-relaxed text-center mb-6">
+                    <h3 class="font-serif text-3xl sm:text-4xl font-bold text-crema-suave mb-5 text-center">Bodega Medieval</h3>
+                    <p class="text-crema-suave/80 text-base sm:text-lg leading-relaxed text-center mb-6">
                         Piedra centenaria, aromas profundos, brindis compartidos. El cierre donde todo encaja y se celebra.
                     </p>
-                    <ul class="space-y-3 text-gray-700 font-light text-sm sm:text-base mx-auto max-w-sm">
-                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Cata guiada de vinos locales</li>
-                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Reflexión + cierre emocional</li>
-                        <li class="flex items-start"><span class="text-dorado mr-3 mt-1.5">•</span> Brindis que se recuerdan</li>
+                    <ul class="space-y-3 text-crema-suave/70 font-light text-sm sm:text-base mx-auto max-w-sm">
+                        <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span> Cata guiada de vinos locales</li>
+                        <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span> Reflexión + cierre emocional</li>
+                        <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span> Brindis que se recuerdan</li>
                     </ul>
                 </div>
             </div>
-
             <div class="mt-12 sm:mt-16 text-center">
-                <p class="text-xl sm:text-2xl text-granate font-light italic px-4">
+                <p class="text-xl sm:text-2xl text-crema-suave/90 font-light italic px-4">
                     "El día en que dejamos de ser un grupo… y empezamos a ser un equipo."
                 </p>
             </div>
@@ -213,52 +248,52 @@
     </section>
 
     <!-- Opcionales -->
-    <section class="py-16 sm:py-24 bg-crema">
+    <section class="py-16 sm:py-24 bg-gris-oscuro">
         <div class="container mx-auto px-5 sm:px-6">
             <div class="text-center mb-10 sm:mb-16">
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-granate mb-4">Servicios opcionales</h2>
-                <p class="text-gray-600 text-base sm:text-lg mb-2">Prestados por empresas colaboradoras de confianza</p>
-                <p class="text-gray-500 text-sm italic">Facturación desglosada · Puedes contratarlos o prescindir de ellos</p>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-crema-suave mb-4">Servicios opcionales</h2>
+                <p class="text-crema-suave/80 text-base sm:text-lg mb-2">Prestados por empresas colaboradoras de confianza</p>
+                <p class="text-crema-suave/60 text-sm italic">Facturación desglosada · Puedes contratarlos o prescindir de ellos</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+                <div class="bg-gris-oscuro/50 p-6 sm:p-8 rounded-xl border border-dorado-premium/10">
                     <img loading="lazy" src="images/transporte.png" alt="Casa rural acogedora" class="photo mb-5">
-                    <h3 class="font-serif text-2xl font-bold text-granate mb-3 text-center">Transporte</h3>
-                    <p class="text-gray-700 text-center text-sm sm:text-base mb-2">Traslados cómodos desde y hacia Salamanca.</p>
-                    <p class="text-gray-500 text-center text-xs italic mb-1">Empresa colaboradora independiente</p>
-                    <p class="text-gray-400 text-center text-xs">Se factura de forma separada</p>
+                    <h3 class="font-serif text-2xl font-bold text-crema-suave mb-3 text-center">Transporte</h3>
+                    <p class="text-crema-suave/70 text-center text-sm sm:text-base mb-2">Traslados cómodos desde y hacia Salamanca.</p>
+                    <p class="text-crema-suave/50 text-center text-xs italic mb-1">Empresa colaboradora independiente</p>
+                    <p class="text-crema-suave/40 text-center text-xs">Se factura de forma separada</p>
                 </div>
-                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+                <div class="bg-gris-oscuro/50 p-6 sm:p-8 rounded-xl border border-dorado-premium/10">
                     <img loading="lazy" src="images/portacoeli.png" alt="Restaurante Porta Coeli" class="photo mb-5">
-                    <h3 class="font-serif text-2xl font-bold text-granate mb-3 text-center">Comida</h3>
-                    <p class="text-gray-700 text-center text-sm sm:text-base mb-2">Restaurante con vistas espectaculares y especialidad en arroces.</p>
-                    <p class="text-gray-500 text-center text-xs italic mb-1">Restaurante asociado independiente</p>
-                    <p class="text-gray-400 text-center text-xs">Se factura de forma separada</p>
+                    <h3 class="font-serif text-2xl font-bold text-crema-suave mb-3 text-center">Comida</h3>
+                    <p class="text-crema-suave/70 text-center text-sm sm:text-base mb-2">Restaurante con vistas espectaculares y especialidad en arroces.</p>
+                    <p class="text-crema-suave/50 text-center text-xs italic mb-1">Restaurante asociado independiente</p>
+                    <p class="text-crema-suave/40 text-center text-xs">Se factura de forma separada</p>
                 </div>
-                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+                <div class="bg-gris-oscuro/50 p-6 sm:p-8 rounded-xl border border-dorado-premium/10">
                     <img loading="lazy" src="images/guia.png" alt="Guia Turistica Certificada" class="photo mb-5">
-                    <h3 class="font-serif text-2xl font-bold text-granate mb-3 text-center">Guía Turística Certificada</h3>
-                    <p class="text-gray-700 text-center text-sm sm:text-base mb-2">Guía turística profesional de la Sierra de Francia.</p>
-                    <p class="text-gray-500 text-center text-xs italic mb-1">Empresa colaboradora independiente</p>
-                    <p class="text-gray-400 text-center text-xs">Se factura de forma separada</p>
+                    <h3 class="font-serif text-2xl font-bold text-crema-suave mb-3 text-center">Guía Turística Certificada</h3>
+                    <p class="text-crema-suave/70 text-center text-sm sm:text-base mb-2">Guía turística profesional de la Sierra de Francia.</p>
+                    <p class="text-crema-suave/50 text-center text-xs italic mb-1">Empresa colaboradora independiente</p>
+                    <p class="text-crema-suave/40 text-center text-xs">Se factura de forma separada</p>
                 </div>
-                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+                <div class="bg-gris-oscuro/50 p-6 sm:p-8 rounded-xl border border-dorado-premium/10">
                     <img loading="lazy" src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sala de reuniones moderna" class="photo mb-5">
-                    <h3 class="font-serif text-2xl font-bold text-granate mb-3 text-center">Sala de reuniones</h3>
-                    <p class="text-gray-700 text-center text-sm sm:text-base mb-2">Espacio equipado para reuniones y trabajo en equipo.</p>
-                    <p class="text-gray-500 text-center text-xs italic mb-1">Empresa colaboradora independiente</p>
-                    <p class="text-gray-400 text-center text-xs">Se factura de forma separada</p>
+                    <h3 class="font-serif text-2xl font-bold text-crema-suave mb-3 text-center">Sala de reuniones</h3>
+                    <p class="text-crema-suave/70 text-center text-sm sm:text-base mb-2">Espacio equipado para reuniones y trabajo en equipo.</p>
+                    <p class="text-crema-suave/50 text-center text-xs italic mb-1">Empresa colaboradora independiente</p>
+                    <p class="text-crema-suave/40 text-center text-xs">Se factura de forma separada</p>
                 </div>
-                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+                <div class="bg-gris-oscuro/50 p-6 sm:p-8 rounded-xl border border-dorado-premium/10">
                     <img loading="lazy" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Casa rural acogedora" class="photo mb-5">
-                    <h3 class="font-serif text-2xl font-bold text-granate mb-3 text-center">Alojamiento</h3>
-                    <p class="text-gray-700 text-center text-sm sm:text-base mb-2">Sujeto a disponibilidad.</p>
-                    <p class="text-gray-500 text-center text-xs italic mb-1">Empresa colaboradora independiente</p>
-                    <p class="text-gray-400 text-center text-xs">Se factura de forma separada</p>
+                    <h3 class="font-serif text-2xl font-bold text-crema-suave mb-3 text-center">Alojamiento</h3>
+                    <p class="text-crema-suave/70 text-center text-sm sm:text-base mb-2">Sujeto a disponibilidad.</p>
+                    <p class="text-crema-suave/50 text-center text-xs italic mb-1">Empresa colaboradora independiente</p>
+                    <p class="text-crema-suave/40 text-center text-xs">Se factura de forma separada</p>
                 </div>
             </div>
             <div class="text-center mt-8">
-                <p class="text-gray-600 text-sm max-w-2xl mx-auto">
+                <p class="text-crema-suave/70 text-sm max-w-2xl mx-auto">
                     Actuamos como intermediarios facilitando la contratación de estos servicios. En tu presupuesto y factura cada concepto aparecerá desglosado con su proveedor correspondiente.
                 </p>
             </div>
@@ -266,159 +301,119 @@
     </section>
 
     <!-- Ventajas -->
-    <section class="py-16 sm:py-24 bg-white">
+    <section class="py-16 sm:py-24 bg-gris-oscuro">
         <div class="container mx-auto px-5 sm:px-6">
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-granate text-center mb-10 sm:mb-16">Por qué este día funciona</h2>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-crema-suave text-center mb-10 sm:mb-16">Por qué este día funciona</h2>
             <div class="grid sm:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
-                <div class="text-center p-6 bg-crema/50 rounded-xl">
-                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-granate mb-3">A 45 min de Salamanca</h3>
-                    <p class="text-gray-700 text-sm sm:text-base">Vuelta a casa el mismo día, sin complicaciones.</p>
+                <div class="text-center p-6 bg-gris-oscuro/50 rounded-xl border border-dorado-premium/10">
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-crema-suave mb-3">A 45 min de Salamanca</h3>
+                    <p class="text-crema-suave/70 text-sm sm:text-base">Vuelta a casa el mismo día, sin complicaciones.</p>
                 </div>
-                <div class="text-center p-6 bg-crema/50 rounded-xl">
-                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-granate mb-3">Solo para tu equipo</h3>
-                    <p class="text-gray-700 text-sm sm:text-base">Privacidad total. Sin distracciones externas.</p>
+                <div class="text-center p-6 bg-gris-oscuro/50 rounded-xl border border-dorado-premium/10">
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-crema-suave mb-3">Solo para tu equipo</h3>
+                    <p class="text-crema-suave/70 text-sm sm:text-base">Privacidad total. Sin distracciones externas.</p>
                 </div>
-                <div class="text-center p-6 bg-crema/50 rounded-xl">
-                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-granate mb-3">Grupos flexibles</h3>
-                    <p class="text-gray-700 text-sm sm:text-base">De 4 a 15 personas por grupo. Grupos más grandes se dividen para mejor experiencia.</p>
+                <div class="text-center p-6 bg-gris-oscuro/50 rounded-xl border border-dorado-premium/10">
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-crema-suave mb-3">Grupos flexibles</h3>
+                    <p class="text-crema-suave/70 text-sm sm:text-base">De 4 a 15 personas por grupo. Grupos más grandes se dividen para mejor experiencia.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Formulario -->
-    <section id="contacto" class="py-16 sm:py-32 bg-white">
+    <section id="contacto" class="py-16 sm:py-32 bg-gris-oscuro">
         <div class="container mx-auto px-5 sm:px-6">
             <div class="max-w-xl mx-auto text-center">
-                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-granate mb-6">
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-crema-suave mb-6">
                     ¿Listo para cambiar a tu equipo?
                 </h2>
-                <p class="text-lg sm:text-xl text-gray-700 mb-10 sm:mb-12">
+                <p class="text-lg sm:text-xl text-crema-suave/90 mb-10 sm:mb-12">
                     Déjanos tus datos. En <24 h tienes propuesta personalizada.
                 </p>
-
-                <form 
-  name="conclave-contact"
-  method="POST"
-  netlify
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  action="/gracias.html"
-  class="space-y-6 bg-crema p-6 sm:p-10 md:p-12 shadow-xl rounded-xl"
->
-  <!-- Netlify required -->
-  <input type="hidden" name="form-name" value="conclave-contact">
-
-  <!-- Honeypot -->
-  <p class="hidden">
-    <label>Bot: <input name="bot-field"></label>
-  </p>
-
-  <input type="text" name="nombre" required placeholder="Nombre"
-    class="w-full px-5 py-4 border-b-2 border-gray-400 bg-transparent focus:border-dorado">
-
-  <input type="email" name="email" required placeholder="Email profesional"
-    class="w-full px-5 py-4 border-b-2 border-gray-400 bg-transparent focus:border-dorado">
-
-  <input type="text" name="empresa" required placeholder="Empresa"
-    class="w-full px-5 py-4 border-b-2 border-gray-400 bg-transparent focus:border-dorado">
-
-  <input type="tel" name="telefono" required placeholder="Teléfono"
-    class="w-full px-5 py-4 border-b-2 border-gray-400 bg-transparent focus:border-dorado">
-
-  <select name="asistentes" required
-    class="w-full px-5 py-4 border-b-2 border-gray-400 bg-transparent focus:border-dorado">
-    <option value="">Número de personas</option>
-    <option value="4">4 personas</option>
-    <option value="5">5 personas</option>
-    <option value="6">6 personas</option>
-    <option value="7">7 personas</option>
-    <option value="8">8 personas</option>
-    <option value="9">9 personas</option>
-    <option value="10">10 personas</option>
-    <option value="11">11 personas</option>
-    <option value="12">12 personas</option>
-    <option value="13">13 personas</option>
-    <option value="14">14 personas</option>
-    <option value="15">15 personas</option>
-    <option value="mas-de-15">+ de 15 personas</option>
-  </select>
-
-  <textarea name="objetivos" rows="3" placeholder="¿Qué queréis conseguir con este día?"
-    class="w-full px-5 py-4 border-b-2 border-gray-400 bg-transparent focus:border-dorado resize-none"></textarea>
-
-  <div class="text-left border-b-2 border-gray-400 pb-6">
-    <p class="text-gray-700 mb-4 font-light">
-      La experiencia incluye: 
-      <span class="font-medium text-granate">Juego de Misterio + Bodega Medieval</span>
-    </p>
-
-    <p class="text-gray-600 text-sm mb-3">Servicios opcionales:</p>
-
-    <div class="space-y-3">
-      <label class="flex items-start cursor-pointer group">
-        <input type="checkbox" name="transporte" value="si" class="mt-1 mr-3 w-4 h-4 accent-dorado">
-        <span class="text-gray-700">Transporte</span>
-      </label>
-
-      <label class="flex items-start cursor-pointer group">
-        <input type="checkbox" name="guia" value="si" class="mt-1 mr-3 w-4 h-4 accent-dorado">
-        <span class="text-gray-700">Guía Turística</span>
-      </label>
-
-      <label class="flex items-start cursor-pointer group">
-        <input type="checkbox" name="restaurante" value="si" class="mt-1 mr-3 w-4 h-4 accent-dorado">
-        <span class="text-gray-700">Comida en restaurante</span>
-      </label>
-
-      <label class="flex items-start cursor-pointer group">
-        <input type="checkbox" name="sala-reuniones" value="si" class="mt-1 mr-3 w-4 h-4 accent-dorado">
-        <span class="text-gray-700">Sala de reuniones</span>
-      </label>
-
-      <label class="flex items-start cursor-pointer group">
-        <input type="checkbox" name="alojamiento" value="si" class="mt-1 mr-3 w-4 h-4 accent-dorado">
-        <span class="text-gray-700">Alojamiento</span>
-      </label>
-    </div>
-  </div>
-
-  <div class="text-left">
-    <label class="block text-gray-700 mb-2 font-light">Fecha preferida</label>
-    <input type="date" name="fecha" required
-      class="w-full px-5 py-4 border-b-2 border-gray-400 bg-transparent focus:border-dorado">
-  </div>
-
-  <button type="submit"
-    class="btn-primary w-full py-5 text-white font-medium text-lg tracking-wider mt-4">
-    Recibir propuesta personalizada
-  </button>
-
-  <p class="text-sm text-gray-600 text-center mt-4">
-    Respuesta en menos de 24 horas
-  </p>
-</form>
-
+                <form name="conclave-contact" method="POST" netlify data-netlify="true" netlify-honeypot="bot-field" action="/gracias.html" class="space-y-6 bg-gris-oscuro/50 p-6 sm:p-10 md:p-12 shadow-2xl rounded-xl border border-dorado-premium/10">
+                    <input type="hidden" name="form-name" value="conclave-contact">
+                    <p class="hidden"><label>Bot: <input name="bot-field"></label></p>
+                    <input type="text" name="nombre" required placeholder="Nombre" class="w-full px-5 py-4 border-b-2 border-crema-suave/30 bg-transparent focus:border-dorado-premium">
+                    <input type="email" name="email" required placeholder="Email profesional" class="w-full px-5 py-4 border-b-2 border-crema-suave/30 bg-transparent focus:border-dorado-premium">
+                    <input type="text" name="empresa" required placeholder="Empresa" class="w-full px-5 py-4 border-b-2 border-crema-suave/30 bg-transparent focus:border-dorado-premium">
+                    <input type="tel" name="telefono" required placeholder="Teléfono" class="w-full px-5 py-4 border-b-2 border-crema-suave/30 bg-transparent focus:border-dorado-premium">
+                    <select name="asistentes" required class="w-full px-5 py-4 border-b-2 border-crema-suave/30 bg-transparent focus:border-dorado-premium">
+                        <option value="">Número de personas</option>
+                        <option value="4">4 personas</option>
+                        <option value="5">5 personas</option>
+                        <option value="6">6 personas</option>
+                        <option value="7">7 personas</option>
+                        <option value="8">8 personas</option>
+                        <option value="9">9 personas</option>
+                        <option value="10">10 personas</option>
+                        <option value="11">11 personas</option>
+                        <option value="12">12 personas</option>
+                        <option value="13">13 personas</option>
+                        <option value="14">14 personas</option>
+                        <option value="15">15 personas</option>
+                        <option value="mas-de-15">+ de 15 personas</option>
+                    </select>
+                    <textarea name="objetivos" rows="3" placeholder="¿Qué queréis conseguir con este día?" class="w-full px-5 py-4 border-b-2 border-crema-suave/30 bg-transparent focus:border-dorado-premium resize-none"></textarea>
+                    <div class="text-left border-b-2 border-crema-suave/30 pb-6">
+                        <p class="text-crema-suave/80 mb-4 font-light">
+                            La experiencia incluye:
+                            <span class="font-medium text-dorado-premium">Juego de Misterio + Bodega Medieval</span>
+                        </p>
+                        <p class="text-crema-suave/60 text-sm mb-3">Servicios opcionales:</p>
+                        <div class="space-y-3">
+                            <label class="flex items-start cursor-pointer group">
+                                <input type="checkbox" name="transporte" value="si" class="mt-1 mr-3 w-4 h-4 accent-dorado-premium">
+                                <span class="text-crema-suave">Transporte</span>
+                            </label>
+                            <label class="flex items-start cursor-pointer group">
+                                <input type="checkbox" name="guia" value="si" class="mt-1 mr-3 w-4 h-4 accent-dorado-premium">
+                                <span class="text-crema-suave">Guía Turística</span>
+                            </label>
+                            <label class="flex items-start cursor-pointer group">
+                                <input type="checkbox" name="restaurante" value="si" class="mt-1 mr-3 w-4 h-4 accent-dorado-premium">
+                                <span class="text-crema-suave">Comida en restaurante</span>
+                            </label>
+                            <label class="flex items-start cursor-pointer group">
+                                <input type="checkbox" name="sala-reuniones" value="si" class="mt-1 mr-3 w-4 h-4 accent-dorado-premium">
+                                <span class="text-crema-suave">Sala de reuniones</span>
+                            </label>
+                            <label class="flex items-start cursor-pointer group">
+                                <input type="checkbox" name="alojamiento" value="si" class="mt-1 mr-3 w-4 h-4 accent-dorado-premium">
+                                <span class="text-crema-suave">Alojamiento</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="text-left">
+                        <label class="block text-crema-suave mb-2 font-light">Fecha preferida</label>
+                        <input type="date" name="fecha" required class="w-full px-5 py-4 border-b-2 border-crema-suave/30 bg-transparent focus:border-dorado-premium">
+                    </div>
+                    <button type="submit" class="btn-primary w-full py-5 text-white font-medium text-lg tracking-wider mt-4">
+                        Recibir propuesta personalizada
+                    </button>
+                    <p class="text-sm text-crema-suave/60 text-center mt-4">
+                        Respuesta en menos de 24 horas
+                    </p>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-granate text-crema py-12">
+    <footer class="bg-carbon text-crema-suave py-12 border-t border-dorado-premium/10">
         <div class="container mx-auto px-5 sm:px-6">
             <div class="text-center mb-8">
                 <h3 class="font-serif text-2xl sm:text-3xl font-bold mb-4">El Cónclave de San Martín</h3>
-                <p class="text-crema/80 text-sm sm:text-base mb-3">Un día para recordar. Un equipo para siempre.</p>
-                <p class="text-crema/70 text-xs sm:text-sm mb-6">
+                <p class="text-crema-suave/80 text-sm sm:text-base mb-3">Un día para recordar. Un equipo para siempre.</p>
+                <p class="text-crema-suave/70 text-xs sm:text-sm mb-6">
                     San Martín del Castañar, Salamanca · +34 623 022 323
                 </p>
             </div>
-            
-            <div class="max-w-3xl mx-auto border-t border-crema/20 pt-6">
-                <p class="text-crema/60 text-xs leading-relaxed mb-4 text-center">
-                    <strong class="text-crema/80">Información legal:</strong> El Cónclave de San Martín presta directamente los servicios de Juego de Misterio y Bodega Medieval. Los servicios de transporte, guía turística, restaurante, sala de reuniones y alojamiento son prestados por empresas colaboradoras independientes, actuando El Cónclave como intermediario en su contratación. Cada servicio se factura de forma desglosada indicando el proveedor correspondiente.
+            <div class="max-w-3xl mx-auto border-t border-crema-suave/20 pt-6">
+                <p class="text-crema-suave/60 text-xs leading-relaxed mb-4 text-center">
+                    <strong class="text-crema-suave/80">Información legal:</strong> El Cónclave de San Martín presta directamente los servicios de Juego de Misterio y Bodega Medieval. Los servicios de transporte, guía turística, restaurante, sala de reuniones y alojamiento son prestados por empresas colaboradoras independientes, actuando El Cónclave como intermediario en su contratación. Cada servicio se factura de forma desglosada indicando el proveedor correspondiente.
                 </p>
-                <p class="text-crema/50 text-xs text-center">
+                <p class="text-crema-suave/50 text-xs text-center">
                     2026 © El Cónclave de San Martín · Creado por @alexromanleis
                 </p>
             </div>
@@ -426,7 +421,7 @@
     </footer>
 
     <!-- WhatsApp -->
-    <a href="https://wa.me/34623022323?text=Hola%2C%20quiero%20saber%20más%20sobre%20El%20C%C3%B3nclave" target="_blank" class="whatsapp-float fixed bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition-all" aria-label="WhatsApp">
+    <a href="https://wa.me/34623022323?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20El%20C%C3%B3nclave" target="_blank" class="whatsapp-float fixed flex items-center justify-center shadow-lg transition-all" aria-label="WhatsApp">
         <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
