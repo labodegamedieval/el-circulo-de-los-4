@@ -169,176 +169,93 @@
 
 </head>
 <body class="bg-carbon text-crema-suave antialiased">
-  <div class="fixed top-4 right-4 z-50">
-  <select id="languageSwitcher" class="bg-carbon text-crema-suave border border-dorado-premium/40 px-3 py-2 rounded">
-    <option value="es">ES</option>
-    <option value="en">EN</option>
-  </select>
-</div>
 
-
-   <!-- Hero -->
-<section class="hero-bg min-h-[80vh] sm:min-h-screen flex items-center justify-center relative overflow-hidden">
-  <div class="absolute inset-0 z-0"></div>
-  <div class="container mx-auto px-5 sm:px-6 py-16 sm:py-20 relative z-10">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="mb-6 animate-in">
-        <span 
-          class="text-dorado-premium text-xs sm:text-sm tracking-[0.25em] uppercase font-light"
-          data-i18n="hero_location"
-        >
-          San Martín del Castañar · Salamanca
-        </span>
-      </div>
-
-      <h1 
-        class="font-serif text-5xl sm:text-7xl md:text-8xl font-bold text-crema-suave mb-6 leading-tight animate-in delay-1"
-        style="letter-spacing: -0.025em;"
-        data-i18n="hero_title"
-      >
-        La Alianza<br class="sm:hidden"> de la Sierra
-      </h1>
-
-      <div class="luxury-divider max-w-xs mx-auto mb-8 animate-in delay-2"></div>
-
-      <p 
-        class="text-lg sm:text-xl md:text-2xl text-crema-suave/90 max-w-3xl mx-auto mb-6 font-light leading-relaxed animate-in delay-3"
-        data-i18n="hero_subtitle"
-      >
-        Misterio en un pueblo con encanto… risas y brindis bajo bóvedas medievales.
-      </p>
-
-      <p 
-        class="text-base sm:text-lg text-crema-suave/80 max-w-2xl mx-auto mb-10 font-light animate-in delay-3"
-        data-i18n="hero_text"
-      >
-        Olvida el Team Building convencional. Esto es otra historia. Para equipos desde 4 hasta 15 personas.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center animate-in delay-4">
-        <a 
-          href="#contacto"
-          class="btn-primary inline-flex items-center justify-center px-10 sm:px-12 py-5 text-carbon font-medium rounded-none text-base sm:text-lg tracking-wider min-w-[240px]"
-          data-i18n="hero_cta"
-        >
-          Quiero esta experiencia
-        </a>
-
-        <a 
-          href="https://wa.me/34623022323?text=Hola%2C%20quiero%20saber%20más%20sobre%20La%20Alianza%20de%20la%20Sierra"
-          target="_blank"
-          class="inline-flex items-center justify-center px-10 sm:px-12 py-5 text-crema-suave border-2 border-crema-suave/50 font-medium rounded-none text-base sm:text-lg tracking-wider hover:bg-crema-suave/10 transition-all min-w-[240px]"
-          data-i18n="hero_whatsapp"
-        >
-          Hablar por WhatsApp
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+    <!-- Hero -->
+    <section class="hero-bg min-h-[80vh] sm:min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 z-0"></div>
+        <div class="container mx-auto px-5 sm:px-6 py-16 sm:py-20 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-6 animate-in">
+                    <span class="text-dorado-premium text-xs sm:text-sm tracking-[0.25em] uppercase font-light">San Martín del Castañar · Salamanca</span>
+                </div>
+                <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl font-bold text-crema-suave mb-6 leading-tight animate-in delay-1" style="letter-spacing: -0.025em;">
+                    La Alianza<br class="sm:hidden"> de la Sierra
+                </h1>
+                <div class="luxury-divider max-w-xs mx-auto mb-8 animate-in delay-2"></div>
+                <p class="text-lg sm:text-xl md:text-2xl text-crema-suave/90 max-w-3xl mx-auto mb-6 font-light leading-relaxed animate-in delay-3">
+                    Misterio en un pueblo con encanto…<br class="sm:hidden"> risas y brindis bajo bóvedas medievales.
+                </p>
+                <p class="text-base sm:text-lg text-crema-suave/80 max-w-2xl mx-auto mb-10 font-light animate-in delay-3">
+                    Olvida el Team Building convencional. Esto es otra historia. Para equipos desde 4 hasta 15 personas.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-in delay-4">
+                    <a href="#contacto" class="btn-primary inline-flex items-center justify-center px-10 sm:px-12 py-5 text-carbon font-medium rounded-none text-base sm:text-lg tracking-wider min-w-[240px]">
+                        Quiero esta experiencia
+                    </a>
+                    <a href="https://wa.me/34623022323?text=Hola%2C%20quiero%20saber%20más%20sobre%20La%20Alianza%20de%20la%20Sierra" target="_blank" class="inline-flex items-center justify-center px-10 sm:px-12 py-5 text-crema-suave border-2 border-crema-suave/50 font-medium rounded-none text-base sm:text-lg tracking-wider hover:bg-crema-suave/10 transition-all min-w-[240px]">
+                        Hablar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Galería intro -->
-<section class="py-12 sm:py-16 bg-gris-oscuro">
-  <div class="container mx-auto px-5 sm:px-6">
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 max-w-6xl mx-auto">
-      <img loading="lazy" src="images/bodega-cueva.jpeg" alt="Bodega medieval piedra y toneles" class="photo">
-      <img loading="lazy" src="images/jugando.png" alt="Equipo resolviendo pistas en calle medieval" class="photo">
-      <img loading="lazy" src="images/bodega-interior.jpg" alt="Cata de vinos íntima en bodega" class="photo">
-    </div>
-  </div>
-</section>
+    <section class="py-12 sm:py-16 bg-gris-oscuro">
+        <div class="container mx-auto px-5 sm:px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 max-w-6xl mx-auto">
+                <img loading="lazy" src="images/bodega-cueva.jpeg" alt="Bodega medieval piedra y toneles" class="photo">
+                <img loading="lazy" src="images/jugando.png" alt="Equipo resolviendo pistas en calle medieval" class="photo">
+                <img loading="lazy" src="images/bodega-interior.jpg" alt="Cata de vinos íntima en bodega" class="photo">
+            </div>
+        </div>
+    </section>
 
-<!-- Experiencia principal -->
-<section class="py-20 sm:py-32 bg-gris-oscuro">
-  <div class="container mx-auto px-5 sm:px-6">
-
-    <div class="text-center mb-12 sm:mb-20">
-      <span 
-        class="text-dorado-premium text-xs sm:text-sm tracking-[0.3em] uppercase font-light mb-3 block"
-        data-i18n="exp_label"
-      >
-        La experiencia
-      </span>
-
-      <h2 
-        class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-crema-suave mb-4 sm:mb-6"
-        style="letter-spacing: -0.02em;"
-        data-i18n="exp_title"
-      >
-        Dos momentos. Un día que no dejará a nadie indiferente.
-      </h2>
-
-      <div class="luxury-divider max-w-xs mx-auto"></div>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-10 sm:gap-12 max-w-5xl mx-auto">
-
-      <!-- Juego -->
-      <div class="card-elegant p-8 sm:p-12 border-2 border-dorado-premium">
-        <span class="section-number hidden sm:block">01</span>
-
-        <h3 
-          class="font-serif text-3xl sm:text-4xl font-bold text-crema-suave mb-5 text-center"
-          data-i18n="game_title"
-        >
-          Juego de Misterio
-        </h3>
-
-        <p 
-          class="text-crema-suave/80 text-base sm:text-lg leading-relaxed text-center mb-6"
-          data-i18n="game_text"
-        >
-          Calles antiguas, pistas escondidas, decisiones que unen. Tu equipo descubre quiénes son de verdad.
-        </p>
-
-        <ul class="space-y-3 text-crema-suave/70 font-light text-sm sm:text-base mx-auto max-w-sm">
-          <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span><span data-i18n="game_li1">Presión real y risas</span></li>
-          <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span><span data-i18n="game_li2">Revela líderes y mediadores</span></li>
-          <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span><span data-i18n="game_li3">Conexión inmediata</span></li>
-        </ul>
-      </div>
-
-      <!-- Bodega -->
-      <div class="card-elegant p-8 sm:p-12 border-2 border-dorado-premium">
-        <span class="section-number hidden sm:block">02</span>
-
-        <h3 
-          class="font-serif text-3xl sm:text-4xl font-bold text-crema-suave mb-5 text-center"
-          data-i18n="wine_title"
-        >
-          Bodega Medieval
-        </h3>
-
-        <p 
-          class="text-crema-suave/80 text-base sm:text-lg leading-relaxed text-center mb-6"
-          data-i18n="wine_text"
-        >
-          Piedra centenaria, aromas profundos, brindis compartidos. El cierre donde todo encaja y se celebra.
-        </p>
-
-        <ul class="space-y-3 text-crema-suave/70 font-light text-sm sm:text-base mx-auto max-w-sm">
-          <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span><span data-i18n="wine_li1">Cata guiada de vinos locales</span></li>
-          <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span><span data-i18n="wine_li2">Reflexión + cierre emocional</span></li>
-          <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span><span data-i18n="wine_li3">Brindis que se recuerdan</span></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="mt-12 sm:mt-16 text-center">
-      <p 
-        class="text-xl sm:text-2xl text-crema-suave/90 font-light italic px-4"
-        data-i18n="exp_quote"
-      >
-        "El día en que dejamos de ser un grupo… y empezamos a ser un equipo."
-      </p>
-    </div>
-
-  </div>
-</section>
-
+    <!-- Experiencia principal -->
+    <section class="py-20 sm:py-32 bg-gris-oscuro">
+        <div class="container mx-auto px-5 sm:px-6">
+            <div class="text-center mb-12 sm:mb-20">
+                <span class="text-dorado-premium text-xs sm:text-sm tracking-[0.3em] uppercase font-light mb-3 block">La experiencia</span>
+                <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-crema-suave mb-4 sm:mb-6" style="letter-spacing: -0.02em;">
+                    Dos momentos.<br class="sm:hidden"> Un día que no dejará a nadie indiferente.
+                </h2>
+                <div class="luxury-divider max-w-xs mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-10 sm:gap-12 max-w-5xl mx-auto">
+                <!-- Juego -->
+                <div class="card-elegant p-8 sm:p-12 border-2 border-dorado-premium">
+                    <span class="section-number hidden sm:block">01</span>
+                    <h3 class="font-serif text-3xl sm:text-4xl font-bold text-crema-suave mb-5 text-center">Juego de Misterio</h3>
+                    <p class="text-crema-suave/80 text-base sm:text-lg leading-relaxed text-center mb-6">
+                        Calles antiguas, pistas escondidas, decisiones que unen. Tu equipo descubre quiénes son de verdad.
+                    </p>
+                    <ul class="space-y-3 text-crema-suave/70 font-light text-sm sm:text-base mx-auto max-w-sm">
+                        <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span> Presión real y risas</li>
+                        <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span> Revela líderes y mediadores</li>
+                        <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span> Conexión inmediata</li>
+                    </ul>
+                </div>
+                <!-- Bodega -->
+                <div class="card-elegant p-8 sm:p-12 border-2 border-dorado-premium">
+                    <span class="section-number hidden sm:block">02</span>
+                    <h3 class="font-serif text-3xl sm:text-4xl font-bold text-crema-suave mb-5 text-center">Bodega Medieval</h3>
+                    <p class="text-crema-suave/80 text-base sm:text-lg leading-relaxed text-center mb-6">
+                        Piedra centenaria, aromas profundos, brindis compartidos. El cierre donde todo encaja y se celebra.
+                    </p>
+                    <ul class="space-y-3 text-crema-suave/70 font-light text-sm sm:text-base mx-auto max-w-sm">
+                        <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span> Cata guiada de vinos locales</li>
+                        <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span> Reflexión + cierre emocional</li>
+                        <li class="flex items-start"><span class="text-dorado-premium mr-3 mt-1.5">•</span> Brindis que se recuerdan</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 sm:mt-16 text-center">
+                <p class="text-xl sm:text-2xl text-crema-suave/90 font-light italic px-4">
+                    "El día en que dejamos de ser un grupo… y empezamos a ser un equipo."
+                </p>
+            </div>
+        </div>
+    </section>
 
     <!-- Opcionales -->
     <section class="py-16 sm:py-24 bg-carbon">
@@ -352,7 +269,7 @@
                 <div class="bg-carbon/60 p-6 sm:p-8 rounded-lg border border-crema-suave/10">
                     <img loading="lazy" src="images/transporte.png" alt="Transporte cómodo" class="photo mb-4">
                     <h3 class="font-serif text-2xl sm:text-3xl font-bold text-crema-suave mb-3 text-center">Transporte</h3>
-                    <p class="text-crema-suave/80 text-center text-base mb-2">Traslados cómodos desde y hacia Salamanca y Madrid.</p>
+                    <p class="text-crema-suave/80 text-center text-base mb-2">Traslados cómodos desde y hacia Salamanca.</p>
                     <p class="text-crema-suave/60 text-center text-xs italic mb-1">Empresa colaboradora independiente</p>
                     <p class="text-crema-suave/50 text-center text-xs">Se factura de forma separada</p>
                 </div>
@@ -503,7 +420,6 @@
                             <div id="transporte-origen" class="ml-7 mt-2 hidden">
                                 <select name="transporte-origen" class="w-full px-4 py-3 border border-crema-suave/30 bg-gris-oscuro/80 text-crema-suave rounded focus:border-dorado-premium focus:outline-none">
                                     <option value="">Selecciona origen del transporte</option>
-                                    <option value="alberca">Desde La Alberca</option>
                                     <option value="salamanca">Desde Salamanca</option>
                                     <option value="madrid">Desde Madrid</option>
                                 </select>
@@ -603,60 +519,6 @@
             });
         });
     </script>
-  <script>
-const translations = {
-  es: {
-    location: "San Martín del Castañar · Salamanca",
-    hero_title: "La Alianza<br> de la Sierra",
-    hero_subtitle: "Misterio en un pueblo con encanto… risas y brindis bajo bóvedas medievales.",
-    hero_desc: "Olvida el Team Building convencional. Esto es otra historia. Para equipos desde 4 hasta 15 personas.",
-    cta_main: "Quiero esta experiencia",
-    cta_whatsapp: "Hablar por WhatsApp",
-    exp_title: "Dos momentos. Un día que no dejará a nadie indiferente.",
-    game_title: "Juego de Misterio",
-    cellar_title: "Bodega Medieval",
-    form_title: "¿Listo para cambiar a tu equipo?",
-    form_sub: "Déjanos tus datos. En menos de 24h tienes propuesta personalizada.",
-    form_button: "Recibir propuesta personalizada",
-    footer_tag: "Un día para recordar. Un equipo para siempre."
-  },
-  en: {
-    location: "San Martín del Castañar · Salamanca",
-    hero_title: "The Alliance<br> of the Sierra",
-    hero_subtitle: "Mystery in a charming village… laughter and toasts under medieval vaults.",
-    hero_desc: "Forget conventional team building. This is another story. For teams from 4 to 15 people.",
-    cta_main: "I want this experience",
-    cta_whatsapp: "Chat on WhatsApp",
-    exp_title: "Two moments. One day no one will forget.",
-    game_title: "Mystery Game",
-    cellar_title: "Medieval Wine Cellar",
-    form_title: "Ready to transform your team?",
-    form_sub: "Leave your details. In less than 24h you will receive a custom proposal.",
-    form_button: "Get a custom proposal",
-    footer_tag: "A day to remember. A team forever."
-  }
-};
-
-const switcher = document.getElementById("languageSwitcher");
-
-function setLanguage(lang){
-  localStorage.setItem("lang", lang);
-  document.querySelectorAll("[data-i18n]").forEach(el=>{
-    const key = el.dataset.i18n;
-    if(translations[lang][key]){
-      el.innerHTML = translations[lang][key];
-    }
-  });
-}
-
-const saved = localStorage.getItem("lang") || "es";
-switcher.value = saved;
-setLanguage(saved);
-
-switcher.addEventListener("change", e=>{
-  setLanguage(e.target.value);
-});
-</script>
 
 </body>
 </html>
